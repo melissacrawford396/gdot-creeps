@@ -9,7 +9,7 @@ Example of my beautiful project! xD
 
 
 ### Start Screen
-<img src="./img/start_screen.png" alt="start_screen" style="width:50%; height:auto;">
+<img src="./img/start_screen.png" alt="start_screen" style="width:30%; height:auto;">
 
 ### Game Play
-<img src="./img/game_play.png" alt="game_play" style="width:50%; height:auto;">
+<img src="./img/game_play.png" alt="game_play" style="width:30%; height:auto;">
