@@ -13,3 +13,7 @@ Example of my beautiful project! xD
 
 ### Game Play
 <img src="./img/game_play.png" alt="game_play" style="width:30%; height:auto;">
+
+
+### Android
+- https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html
