@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b40g5grn841q5"]
+[gd_scene load_steps=10 format=4 uid="uid://b40g5grn841q5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2qcon"]
 [ext_resource type="PackedScene" uid="uid://c78fthw40b0ud" path="res://Player.tscn" id="1_dfvqp"]
 [ext_resource type="PackedScene" uid="uid://55di4f7ulmg5" path="res://Mob.tscn" id="2_46qo8"]
+[ext_resource type="PackedScene" uid="uid://c0qpre1adjbr" path="res://joystick.tscn" id="3_rkhjs"]
 [ext_resource type="PackedScene" uid="uid://cj1l737rxfot8" path="res://hud.tscn" id="4_bokqk"]
 [ext_resource type="AudioStream" uid="uid://xreadunuqcpu" path="res://art/gameover.wav" id="5_fbye1"]
 
@@ -24,6 +25,9 @@ loop = true
 [node name="Main" type="Node"]
 script = ExtResource("1_2qcon")
 mob_scene = ExtResource("2_46qo8")
+
+[node name="Joystick" parent="." instance=ExtResource("3_rkhjs")]
+position = Vector2(80, 625)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
