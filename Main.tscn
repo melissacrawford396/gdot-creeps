@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b40g5grn841q5"]
+[gd_scene load_steps=10 format=4 uid="uid://b40g5grn841q5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_2qcon"]
 [ext_resource type="PackedScene" uid="uid://c78fthw40b0ud" path="res://Player.tscn" id="1_dfvqp"]
 [ext_resource type="PackedScene" uid="uid://55di4f7ulmg5" path="res://Mob.tscn" id="2_46qo8"]
+[ext_resource type="PackedScene" uid="uid://c0qpre1adjbr" path="res://joystick.tscn" id="3_rkhjs"]
 [ext_resource type="PackedScene" uid="uid://cj1l737rxfot8" path="res://hud.tscn" id="4_bokqk"]
 [ext_resource type="AudioStream" uid="uid://xreadunuqcpu" path="res://art/gameover.wav" id="5_fbye1"]
 
@@ -29,6 +30,10 @@ mob_scene = ExtResource("2_46qo8")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.286275, 0.854902, 0.458824, 0.694118)
@@ -60,6 +65,8 @@ stream = SubResource("AudioStreamOggVorbis_vdjtb")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fbye1")
+
+[node name="Joystick" parent="." instance=ExtResource("3_rkhjs")]
 
 [connection signal="hit" from="Player" to="." method="update_hit_counter"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

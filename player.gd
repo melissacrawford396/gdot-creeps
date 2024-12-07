@@ -1,8 +1,9 @@
 extends Area2D
 signal hit
 
+@onready var joystick = $"../Joystick"
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
+@export var speed = 300 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
 
@@ -10,7 +11,6 @@ var screen_size # Size of the game window.
 func _ready() -> void:
 		screen_size = get_viewport_rect().size
 		hide()
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +24,16 @@ func _process(delta: float) -> void:
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
+		
+	# Velocity based on joystick usage
+	#if (joystick.)
+	var direction = joystick.posVector
+	if direction:
+		velocity = direction * speed
+	else:
+		velocity = Vector2(0,0)
+		
+	#move_and_slide()
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
