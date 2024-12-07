@@ -38,6 +38,8 @@ func calculateVector():
 	if(abs(global_position.y - center_of_joystick.y) >= deadZone):
 		parent.posVector.y = (global_position.y - center_of_joystick.y) / maxLength
 
+func get_center_of_joystick():
+	center_of_joystick = joystickButton.position + (joystickButton.size * 0.5)
 
 func _on_button_button_down() -> void:
 	pressing = true

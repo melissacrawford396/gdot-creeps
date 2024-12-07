@@ -67,10 +67,6 @@ stream = SubResource("AudioStreamOggVorbis_vdjtb")
 stream = ExtResource("5_fbye1")
 
 [node name="JoystickD" parent="." instance=ExtResource("3_rkhjs")]
-offset_left = 65.0
-offset_top = -154.0
-offset_right = 65.0
-offset_bottom = -154.0
 
 [connection signal="hit" from="Player" to="." method="update_hit_counter"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
