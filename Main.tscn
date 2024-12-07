@@ -26,13 +26,14 @@ loop = true
 script = ExtResource("1_2qcon")
 mob_scene = ExtResource("2_46qo8")
 
-[node name="Joystick" parent="." instance=ExtResource("3_rkhjs")]
-position = Vector2(80, 625)
-
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.286275, 0.854902, 0.458824, 0.694118)
@@ -64,6 +65,12 @@ stream = SubResource("AudioStreamOggVorbis_vdjtb")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fbye1")
+
+[node name="JoystickD" parent="." instance=ExtResource("3_rkhjs")]
+offset_left = 65.0
+offset_top = -154.0
+offset_right = 65.0
+offset_bottom = -154.0
 
 [connection signal="hit" from="Player" to="." method="update_hit_counter"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
