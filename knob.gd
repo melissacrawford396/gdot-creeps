@@ -20,30 +20,23 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if pressing:
-		global_position = get_global_mouse_position()
-		#if get_global_mouse_position().distance_to(parent.global_position) <= maxLength:
-			#global_position = get_global_mouse_position()
-		#else:
-			#var angle = parent.global_position.angle_to_point(get_global_mouse_position())
-			#global_position.x = parent.global_position.x + cos(angle) * maxLength
-			#global_position.y = parent.global_position.y + sin(angle) * maxLength
-		#calculateVector()
+		if get_global_mouse_position().distance_to(center_of_joystick) <= maxLength:
+			global_position = get_global_mouse_position()
+		else:
+			var angle = center_of_joystick.angle_to_point(get_global_mouse_position())
+			global_position.x = center_of_joystick.x + cos(angle) * maxLength
+			global_position.y = center_of_joystick.y + sin(angle) * maxLength
+		calculateVector()
 	else:
-		
 		global_position = lerp(global_position, center_of_joystick, delta * 10)
-		#global_position = lerp(global_position, parent.global_position, delta * 10)
 		parent.posVector = Vector2(0, 0)
-		
-	#print(global_position, joystickButton.global_position)
-	#print(parent.posVector)
+	print(parent.posVector)
 
 func calculateVector():
-	if((global_position.x - parent.global_position.x) >= deadZone):
-		parent.posVector.x = (global_position.x - parent.global_position.x) / maxLength
-	if((global_position.y - parent.global_position.y) >= deadZone):
-		parent.posVector.y = (global_position.y - parent.global_position.y) / maxLength
-		
-		
+	if(abs(global_position.x - center_of_joystick.x) >= deadZone):
+		parent.posVector.x = (global_position.x - center_of_joystick.x) / maxLength
+	if(abs(global_position.y - center_of_joystick.y) >= deadZone):
+		parent.posVector.y = (global_position.y - center_of_joystick.y) / maxLength
 
 
 func _on_button_button_down() -> void:
