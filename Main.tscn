@@ -66,7 +66,7 @@ stream = SubResource("AudioStreamOggVorbis_vdjtb")
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fbye1")
 
-[node name="JoystickD" parent="." instance=ExtResource("3_rkhjs")]
+[node name="Joystick" parent="." instance=ExtResource("3_rkhjs")]
 
 [connection signal="hit" from="Player" to="." method="update_hit_counter"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

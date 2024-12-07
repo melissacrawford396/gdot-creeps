@@ -27,6 +27,7 @@ func new_game():
 	score = 0
 	hits = 0
 	$Player.start($StartPosition.position)
+	$Joystick.show()
 	$StartTimer.start()
 	
 	$HUD.update_score(score)
