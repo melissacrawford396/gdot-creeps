@@ -19,6 +19,7 @@ func game_over() -> void:
 	$MobTimer.stop()
 	
 	$HUD.show_game_over()
+	$Joystick.hide()
 	
 	$Music.stop()
 	$DeathSound.play()
